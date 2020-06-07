@@ -14,7 +14,7 @@ namespace HTML.WebSite.Controllers
             return View();
         }
 
-        public ActionResult Variable()
+        public ActionResult Promociones()
         {
             return View();
         }

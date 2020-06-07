@@ -89,6 +89,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\img\logo.gif" />
+    <Content Include="Content\img\productos\Auricular.jpg" />
+    <Content Include="Content\img\productos\fuente.jpg" />
+    <Content Include="Content\img\productos\mouse.jpg" />
+    <Content Include="Content\img\promociones\promocioines.jpeg" />
     <Content Include="Content\site.css" />
     <Content Include="Global.asax" />
     <None Include="bundleconfig.json" />
@@ -128,7 +132,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Scripts\jquery-2.2.4.min.map" />
     <Content Include="Views\JavaScript\Index.cshtml" />
-    <Content Include="Views\JavaScript\Variable.cshtml" />
+    <Content Include="Views\JavaScript\Promociones.cshtml" />
     <Content Include="Views\JavaScript\Condicionales.cshtml" />
     <Content Include="Views\JavaScript\Demo.cshtml" />
     <Content Include="Views\JavaScript\AltaProducto.cshtml" />

@@ -4,7 +4,7 @@
 }
 
 <h2>Alta de Productos</h2>
-
+<br>
 <div>
     <table>
         <tr>
@@ -15,23 +15,36 @@
                 <input id="txtCodigo" type="number" placeholder="Ingrese codigo producto" />
             </td>
         </tr>
+
         <tr>
             <th>Nombre</th>
             <td> <input id="txtNombre" type="text" /> </td>
         </tr>
         <tr>
-            <th></th>
-            <td> <input  type="checkbox" /> </td>
+            <th>Precio</th>
+            <td>
+                <input id="txtPrecio" type="number" placeholder="Ingrese el precio" />
+            </td>
         </tr>
+        <tr>
+            <th>
+                Detalle
+            </th>
+            <td>
+                <textarea name="txtDetalle">Describa el producto</textarea>
+            </td>
+        </tr>
+   
         <tr>
             <th></th>
             <td>
-                <input type="button" value="Grabar" id="btnSave" class="myButton" />
-                <input type="button" value="Listar" id="btnToList" class="myButton" />
+                <input type="button" value="Grabar" id="btnSave" class="botonAlta" />
+                <input type="button" value="Listar" id="btnToList" class="botonAlta" />
+
             </td>
         </tr>
     </table>
-
+    <br>
     <p>
         <h3>Listado de productos</h3>
     </p>
