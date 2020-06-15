@@ -11,6 +11,7 @@
 </head>
 <body>
     <div id="wrapper">
+
         <header id="header">
             <div id="logo">
                 <h1><a href="/">HardwarePC</a></h1>
@@ -21,58 +22,82 @@
         <nav id="menu">
             <ul>
                 <li class="active"><a href="/">Home</a></li>
-                <li><a href="/Restaurant/">Restaurantes</a></li>
+                <li><a href="/Restaurant/">Productos</a></li>
                 <li><a href="/home/about/">Acerca</a></li>
                 <li><a href="/home/contact/">Contacto</a></li>
                 <li><a href="/home/Covid_19/">COVID-19</a></li>
-                <li><a href="/home/Politica_garantia/">Política de Garantia</a>
+                <li><a href="/home/Ubicacion/">Ubicación</a>
             </ul>
         </nav>
 
-        <section id="page">
+        <!-- Contenido -->
+        <section>
 
-            <article id="content">
+            <article>
                 @RenderBody()
             </article>
 
-            <article id="sidebar">
+            <!--
+        <article id="sidebar">
+            <ul>
+                <li id="search">
+                    <h2 class="search">Buscar productos</h2>
+                    <form method="get" action="">
+                        <fieldset>
+                            <input type="text" id="search-text" name="s" value="" autocomplete="off" />
+                            <input type="submit" id="search-submit" value="Buscar" />
+                        </fieldset>
+                    </form>
+                </li>
+                <li>
+                    <h2 class="categories">Promociones</h2>
+                    <ul>
+                        <li><a href="#">Ahora 12</a></li>
+                        <li><a href="#">Descuentos</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2>Categorías</h2>
+                    <ul>
+                        <li><a href="#">Notebooks</a></li>
+                        <li><a href="#">Periféricos</a></li>
+                        <li><a href="#">Almacenamiento</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2>Bebindum Mauris </h2>
+                    <ul>
+                        <li><a href="#">Nec metus sed donec</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </article>
+
+             <div style="clear: both; height: 1px"></div>
+
+             -->
+
+        </section>
+
+        <!-- Contenido relacionado-->
+        <aside>
+            <article>
                 <ul>
                     <li id="search">
                         <h2 class="search">Buscar productos</h2>
                         <form method="get" action="">
                             <fieldset>
-                                <input type="text" id="search-text" name="s" value="" autocomplete="off"/>
+                                <input type="text" id="search-text" name="s" value="" autocomplete="off" />
                                 <input type="submit" id="search-submit" value="Buscar" />
                             </fieldset>
                         </form>
                     </li>
-                    <li>
-                        <h2 class="categories">Promociones</h2>
-                        <ul>
-                            <li><a href="#">Ahora 12</a></li>
-                            <li><a href="#">Descuentos</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h2>Categorías</h2>
-                        <ul>
-                            <li><a href="#">Notebooks</a></li>
-                            <li><a href="#">Periféricos</a></li>
-                            <li><a href="#">Almacenamiento</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h2>Bebindum Mauris </h2>
-                        <ul>
-                            <li><a href="#">Nec metus sed donec</a></li>
-                        </ul>
-                    </li>
                 </ul>
             </article>
-            <div style="clear: both; height: 1px"></div>
-        </section>
+        </aside>
 
-        <footer id="footer">
+        <!-- Pie de pagina -->
+        <footer>
             <p>&copy; @DateTime.Now.Year - HardwarePC | <a href="#">Términos y Condiciones</a> </p>
         </footer>
     </div>

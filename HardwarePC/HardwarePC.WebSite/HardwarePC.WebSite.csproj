@@ -180,12 +180,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\img\header.jpg" />
-    <Content Include="Content\img\item.jpg" />
     <Content Include="Content\img\mainbanner.jpg" />
     <Content Include="Content\img\mainmenu.jpg" />
-    <Content Include="Content\img\menu.jpg" />
-    <Content Include="Content\img\post.gif" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -237,7 +233,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Covid_19.cshtml" />
-    <Content Include="Views\Home\Politica_garantia.cshtml" />
+    <Content Include="Views\Home\Ubicacion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

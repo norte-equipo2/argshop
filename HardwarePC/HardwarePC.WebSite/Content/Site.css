@@ -6,7 +6,7 @@
 
 body {
     margin: 0px;
-    background: #C0C0C0;
+    background-color: #C0C0C0;
     text-align: justify;
     font-family: 'Open Sans', Arial, sans-serif;
     font-size: 13px;
@@ -91,8 +91,6 @@ a {
     width: 1200px;
     height: 41px;
     margin: 0 auto;
-    /*padding: 0px 0px 0px 28px;*/
-    /*background: url('/content/img/menu.jpg') no-repeat left top;*/
     padding: 0px 0px 0px 0px;
     background: url('/content/img/mainmenu.jpg') no-repeat left top;
 }
@@ -127,21 +125,26 @@ a {
             color: #FFFFFF;
         }
 
+
+/*
 #page {
-    width: 1200px;
+    width: 600px;
     margin: 0 auto;
     padding: 0px 0px;
-    /*background: #FFFFFF url('/content/img/bg.jpg') repeat-y left top;*/
 }
+*/
 
+/*
 #content {
     float: left;
-    width: 830px;
+    width: 500px;
     padding: 20px 20px 0px 20px;
     background-color: #FFFFFF;
     min-height: 500px;
 }
+*/
 
+/*
 .post {
     background: url('/content/img/post.gif') repeat-x left bottom;
     margin: 0px 0px 30px 0px;
@@ -180,9 +183,31 @@ a {
         text-transform: lowercase;
         color: #7D807A;
     }
+*/
+
+
+section {
+    background-color: #fafafa;
+    padding: 10px 20px 0px 20px;
+    overflow: auto;
+    float: left;
+    width: 800px;
+    min-height: 500px;
+}
+
+/* Aside */
+aside {
+    float: right;
+    width: 340px;
+    padding: 10px 10px 0px 10px;
+    background-color: lightgray;
+    min-height: 500px;
+}
+
 
 
 /* Sidebar */
+/*
 #sidebar {
     float: right;
     width: 300px;
@@ -246,6 +271,7 @@ a {
         #sidebar a:hover {
             text-decoration: underline;
         }
+*/
 
 #header-search {
     width: 940px;
@@ -281,24 +307,26 @@ a {
     color: #FFFFFF;
 }
 
-#footer {
-    height: 50px;
-    padding: 14px 0px 0px 0px;
+footer {
+    clear: both;
+    position: relative;
+    height: 30px;
+    padding: 20px 0px 0px 0px;
     background-color: black;
     color: #9C9C9C;
 }
 
-    #footer p {
+    footer p {
         margin: 0;
         text-align: center;
         font-size: 11px;
     }
 
-    #footer a {
+    footer a {
         text-decoration: underline;
         color: #808080;
     }
 
-        #footer a:hover {
+        footer a:hover {
             text-decoration: none;
         }

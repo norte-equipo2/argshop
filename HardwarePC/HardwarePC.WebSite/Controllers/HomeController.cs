@@ -34,9 +34,9 @@ namespace HardwarePC.WebSite.Controllers
             return View();
         }
 
-        public ActionResult Politica_garantia()
+        public ActionResult Ubicacion()
         {
-            ViewBag.Message = "Nuestra Política de Garantía";
+            ViewBag.Message = "Nuestra ubicación";
 
             return View();
         }
