@@ -20,8 +20,8 @@ h1, h2, h3 {
 
 
 p, blockquote, ul, ol {
-    margin-bottom: 20px;
-    line-height: 2em;
+    margin-bottom: 10px;
+    line-height: 1.5em;
 }
 
 ul, ol, li {
@@ -139,7 +139,7 @@ a {
     width: 830px;
     padding: 20px 20px 0px 20px;
     background-color: #FFFFFF;
-    min-height: 420px;
+    min-height: 500px;
 }
 
 .post {
@@ -187,9 +187,10 @@ a {
     float: right;
     width: 300px;
     margin: 0px;
+    overflow: auto;
     padding: 10px 0px 10px 30px;
     background-color: lightgray;
-    min-height: 420px;
+    min-height: 500px;
 }
 
     #sidebar ul {
@@ -256,13 +257,20 @@ a {
 #search {
     height: 51px;
     margin: 0 auto;
-    padding: 0px 0px 60px 0px;
+    padding: 0px 0px 40px 0px;
 }
 
     #search form {
         margin: 0;
         padding: 12px 0px 0 0;
     }
+    #search form fieldset{
+        border: none;        
+    }
+        
+    #search form fieldset input {
+        font-size: 14px;        
+     }
 
 #search-submit {
     margin-left: 10px;

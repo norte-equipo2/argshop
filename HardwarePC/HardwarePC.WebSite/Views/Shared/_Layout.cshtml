@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <title>@ViewBag.Title - HardwarePC</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -24,6 +24,8 @@
                 <li><a href="/Restaurant/">Restaurantes</a></li>
                 <li><a href="/home/about/">Acerca</a></li>
                 <li><a href="/home/contact/">Contacto</a></li>
+                <li><a href="/home/Covid_19/">COVID-19</a></li>
+                <li><a href="/home/Politica_garantia/">Política de Garantia</a>
             </ul>
         </nav>
 
@@ -36,25 +38,27 @@
             <article id="sidebar">
                 <ul>
                     <li id="search">
-                        <h2 class="search">Buscar recetas inspiradas</h2>
+                        <h2 class="search">Buscar productos</h2>
                         <form method="get" action="">
                             <fieldset>
-                                <input type="text" id="search-text" name="s" value="" autocomplete="off" />
+                                <input type="text" id="search-text" name="s" value="" autocomplete="off"/>
                                 <input type="submit" id="search-submit" value="Buscar" />
                             </fieldset>
                         </form>
                     </li>
                     <li>
-                        <h2 class="categories">Clásicos de Buenos Aires</h2>
+                        <h2 class="categories">Promociones</h2>
                         <ul>
-                            <li><a href="#">Champiñones rellenos con espinacas</a></li>
-                            <li><a href="#">Salteado ardiente de pollo</a></li>
+                            <li><a href="#">Ahora 12</a></li>
+                            <li><a href="#">Descuentos</a></li>
                         </ul>
                     </li>
                     <li>
-                        <h2>Volutpat Dolore</h2>
+                        <h2>Categorías</h2>
                         <ul>
-                            <li><a href="#">Nec metus sed donec</a></li>
+                            <li><a href="#">Notebooks</a></li>
+                            <li><a href="#">Periféricos</a></li>
+                            <li><a href="#">Almacenamiento</a></li>
                         </ul>
                     </li>
                     <li>

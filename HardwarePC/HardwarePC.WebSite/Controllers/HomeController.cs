@@ -26,5 +26,19 @@ namespace HardwarePC.WebSite.Controllers
 
             return View();
         }
+
+        public ActionResult Covid_19()
+        {
+            ViewBag.Message = "COVID-19";
+
+            return View();
+        }
+
+        public ActionResult Politica_garantia()
+        {
+            ViewBag.Message = "Nuestra Política de Garantía";
+
+            return View();
+        }
     }
 }
