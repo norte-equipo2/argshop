@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -234,6 +235,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Covid_19.cshtml" />
     <Content Include="Views\Home\Ubicacion.cshtml" />
+    <Content Include="Views\Producto\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -242,6 +244,16 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HardwarePC.Data\HardwarePC.Data.csproj">
+      <Project>{1f858ac7-0716-4e7b-af18-d289bead3c64}</Project>
+      <Name>HardwarePC.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HardwarePC.Services\HardwarePC.Services.csproj">
+      <Project>{d89ed16a-c7b2-4e3f-a851-3dce22019b1c}</Project>
+      <Name>HardwarePC.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
