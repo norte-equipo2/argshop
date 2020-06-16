@@ -1,0 +1,25 @@
+﻿@model IEnumerable<HardwarePC.Data.Model.Producto>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="post">
+    <h2 class="title">Lista de Productos</h2>
+    <p class="byline">Hay un total de: @Enumerable.Count(Model) productos</p>
+    <div class="entry">
+        <p>
+
+        </p>
+    </div>
+
+    <div>
+        <h2>Productos</h2>
+
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>@item.Name</li>
+            }
+        </ul>
+    </div>
+</div>
