@@ -316,6 +316,47 @@ footer {
     color: #9C9C9C;
 }
 
+
+/*----------------------------------ACERCA DE NOSOTROS-----------------------------------------*/
+
+/*----------------------------------FOTOS DE NOSOTROS-----------------------------------------*/
+
+foto_nosotros {
+    display: grid;
+    padding: 2rem;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(2, 350px);
+    grid-template-rows: 160px 160px;
+    font-size: 1rem;
+}
+
+.foto_nosotros {
+    background-color: rebeccapurple;
+    color: white;
+    padding: 1rem;
+}
+
+/*----------------------------------DESCRIPCION DE NOSOTROS-----------------------------------------*/
+
+
+desc_nosotros {
+    display: grid;
+    padding: 2rem;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(2, 350px);
+    grid-template-rows: 160px 160px;
+    font-size: 1rem;
+}
+
+.desc_nosotros {
+    background-color: #fafafa;
+    color: black;
+    padding: 1rem;
+}
+
+
+
+
     footer p {
         margin: 0;
         text-align: center;
