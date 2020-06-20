@@ -120,6 +120,7 @@ a {
         font-style: italic;
         color: #FFFFFF;
     }
+
         #menu a:hover, #menu .active a {
             background: #C11212;
             color: #FFFFFF;
@@ -290,13 +291,14 @@ aside {
         margin: 0;
         padding: 12px 0px 0 0;
     }
-    #search form fieldset{
-        border: none;        
-    }
-        
-    #search form fieldset input {
-        font-size: 14px;        
-     }
+
+        #search form fieldset {
+            border: none;
+        }
+
+            #search form fieldset input {
+                font-size: 14px;
+            }
 
 #search-submit {
     margin-left: 10px;
@@ -334,40 +336,26 @@ foto_nosotros {
     background-color: rebeccapurple;
     color: white;
     padding: 1rem;
+    width: 10px;
 }
 
 /*----------------------------------DESCRIPCION DE NOSOTROS-----------------------------------------*/
 
 
-desc_nosotros {
-    display: grid;
-    padding: 2rem;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(2, 350px);
-    grid-template-rows: 160px 160px;
-    font-size: 1rem;
+
+
+
+footer p {
+    margin: 0;
+    text-align: center;
+    font-size: 11px;
 }
 
-.desc_nosotros {
-    background-color: #fafafa;
-    color: black;
-    padding: 1rem;
+footer a {
+    text-decoration: underline;
+    color: #808080;
 }
 
-
-
-
-    footer p {
-        margin: 0;
-        text-align: center;
-        font-size: 11px;
+    footer a:hover {
+        text-decoration: none;
     }
-
-    footer a {
-        text-decoration: underline;
-        color: #808080;
-    }
-
-        footer a:hover {
-            text-decoration: none;
-        }
