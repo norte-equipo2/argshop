@@ -183,6 +183,7 @@
   <ItemGroup>
     <Content Include="Content\img\mainbanner.jpg" />
     <Content Include="Content\img\mainmenu.jpg" />
+    <Content Include="Content\img\Seba.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
