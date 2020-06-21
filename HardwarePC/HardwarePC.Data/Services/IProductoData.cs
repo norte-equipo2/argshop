@@ -10,5 +10,9 @@ namespace HardwarePC.Data.Services
     public interface IProductoData
     {
         IEnumerable<Producto> GetAll();
+
+        void Insert(Producto objProducto);
+
+        void Update(Producto objProducto);
     }
 }

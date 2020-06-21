@@ -10,21 +10,36 @@ namespace HardwarePC.Data.Services
     public class InMemoryProductoData : IProductoData
     {
 
-        private List<Producto> productos;
+        private static List<Producto> productos;
 
         public InMemoryProductoData()
         {
-            productos = new List<Producto>
+            if (productos is null)
             {
-            new Producto() { Id = 1, Name = "Acer Aspire E 15", Category = CategoryType.Notebooks},
-            new Producto() { Id = 2, Name = "WD M2 Blue 240gb", Category = CategoryType.Almacenamiento },
-            new Producto() { Id = 3, Name = "Teclado Logitech", Category = CategoryType.Periféricos }
+
+                productos = new List<Producto>
+
+            {
+            new Producto() { Id = 1, Name = "Acer Aspire E 15", Category = "A"},
+            new Producto() { Id = 2, Name = "WD M2 Blue 240gb", Category = "B" },
+            new Producto() { Id = 3, Name = "Teclado Logitech", Category = "C" }
             };
+            }
         }
-        
+
         public IEnumerable<Producto> GetAll()
         {
             return productos.OrderBy(o => o.Name);
+        }
+
+        public void Insert(Producto objProducto)
+        {
+            productos.Add(objProducto);
+        }
+
+        public void Update(Producto objProducto)
+        {
+            throw new NotImplementedException();
         }
     }
 }
