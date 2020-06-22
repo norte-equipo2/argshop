@@ -3,9 +3,16 @@
     ViewBag.Title = "Index";
 }
 
+<h2>Listado General</h2>
+<p>
+    <a href="/Producto/Create">Nuevo producto</a>
+</p>
+<hr />
+
 <div class="post">
     <h2 class="title">Lista de Productos</h2>
     <p class="byline">Hay un total de: @Enumerable.Count(Model) productos</p>
+
     <div class="entry">
         <p>
 
@@ -18,8 +25,11 @@
         <ul>
             @foreach (var item in Model)
             {
+                <li>@item.Id</li>
                 <li>@item.Name</li>
+                <li>@item.Category</li>
             }
         </ul>
     </div>
+
 </div>
