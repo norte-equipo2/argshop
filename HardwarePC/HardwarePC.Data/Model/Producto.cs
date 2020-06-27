@@ -6,10 +6,17 @@ using System.Threading.Tasks;
 
 namespace HardwarePC.Data.Model
 {
-    public class Producto
+    public class Producto : IdentityBase
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Category { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public int MarcaId { get; set; }
+        public string Image { get; set; }
+        public double Price { get; set; }
+        public int QuantitySold { get; set; }
+        public double AvgStars { get; set; }
+
+        //Metodo virtual para poder sobrescribir
+        public virtual Marca Marca { get; set; }
     }
 }
