@@ -1,43 +1,53 @@
 ﻿@model HardwarePC.Data.Model.Producto
+
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Editar Producto";
 }
 
 <div class="post">
-    <h2 class="title"><a href="#"> Nuevo producto</a></h2>
+    <h2 class="title"><a href="#"> Editar Producto</a></h2>
     <p class="byline">
-        <h4>Producto</h4>
+        <h4>Producto: @Model.Title</h4>
     </p>
     <div>
         @using (Html.BeginForm())
         {
-        <div class="form">
+        <div class="form-horizontal">
+
             <hr />
             <span class="text-danger">@ViewBag.MessageDanger</span>
+            @Html.HiddenFor(model => model.Id)
+
             <div class="form-group">
                 @Html.LabelFor(model => model.Title)
                 <div>
                     @Html.EditorFor(model => model.Title)
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
                 </div>
             </div>
+
             <div class="form-group">
                 @Html.LabelFor(model => model.Description)
                 <div>
                     @Html.EditorFor(model => model.Description)
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
                 </div>
             </div>
+
             <div class="form-group">
                 @Html.LabelFor(model => model.MarcaId)
                 <div>
                     @Html.EditorFor(model => model.MarcaId)
                 </div>
             </div>
+
             <div class="form-group">
                 @Html.LabelFor(model => model.Image)
                 <div>
                     @Html.EditorFor(model => model.Image)
                 </div>
             </div>
+
             <div class="form-group">
                 @Html.LabelFor(model => model.Price)
                 <div>
@@ -57,18 +67,19 @@
                     @Html.EditorFor(model => model.AvgStars)
                 </div>
             </div>
+            @Html.HiddenFor(model => model.CreatedOn)
+            @Html.HiddenFor(model => model.CreatedBy)
+        </div>
+
             <div class="form-group">
                 <div>
-                    <br />
-                    <input type="submit" value="Guardar" class="btn-input" />
+                    <input type="submit" value="Guardar" />
                 </div>
             </div>
-        </div>
         }
-    </div>
-    <div>
-        <br />
-        @Html.ActionLink("Volver a la lista", "Index")
-    </div>
 
+        <div>
+            @Html.ActionLink("Volver a la lista", "Index")
+        </div>
+    </div>
 </div>
