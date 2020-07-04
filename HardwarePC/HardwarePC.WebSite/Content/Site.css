@@ -202,7 +202,7 @@ aside {
     width: 340px;
     padding: 10px 10px 0px 10px;
     background-color: lightgray;
-    min-height: 500px;
+    min-height: 590px;
 }
 
 
@@ -412,4 +412,46 @@ footer a {
 
 li:hover {
     background: red;
+}
+
+.cardProducto {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+}
+
+.precioProducto {
+    color: grey;
+    font-size: 22px;
+}
+
+.cardProducto button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+    .cardProducto button:hover {
+        opacity: 0.7;
+    }
+
+.columnaProducto {
+    margin-top: 20px;
+    float: left;
+    width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }

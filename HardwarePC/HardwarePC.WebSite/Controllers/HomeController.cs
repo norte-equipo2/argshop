@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HardwarePC.Data.Model;
+using HardwarePC.Data.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,8 +8,15 @@ using System.Web.Mvc;
 
 namespace HardwarePC.WebSite.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
+        BaseDataService<Producto> db;
+
+        public HomeController()
+        {
+            db = new BaseDataService<Producto>();
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -39,6 +48,14 @@ namespace HardwarePC.WebSite.Controllers
             ViewBag.Message = "Nuestra ubicación";
 
             return View();
+        }
+
+
+        public ActionResult catalogoProductos()
+        {
+            ViewBag.Message = "Cat. Productos";
+            var list = db.Get();
+            return View(list);
         }
     }
 }
