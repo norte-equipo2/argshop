@@ -185,6 +185,43 @@ a {
         color: #7D807A;
     }
 
+    /*-----------------*/
+    /*  Form Producto  */
+    /*-----------------*/
+    .post .form-horizontal {
+        margin-left: 10px;
+    }
+
+        .post .form-horizontal .form-group{
+            padding-top: 5px;
+            font-style: normal;
+            color: black;
+        }
+
+            .post .form-horizontal .form-group .separator {
+                
+            }
+
+            .form-control {
+                width: 200px;
+            }
+
+.btn-input {
+    width: 120px;
+    height: 30px;
+    position: relative;
+    display: block;
+    /*margin: 20px;*/
+    border-radius: 10px;
+    border: none;
+    background: #425edf;
+    color: white;
+    font-size: 15px;
+    transition: background 0.4s;
+    cursor: pointer;
+}
+
+
 
 
 section {
@@ -320,9 +357,7 @@ footer {
 
 
 /*----------------------------------ACERCA DE NOSOTROS-----------------------------------------*/
-
 /*----------------------------------FOTOS DE NOSOTROS-----------------------------------------*/
-
 foto_nosotros {
     display: grid;
     padding: 2rem;

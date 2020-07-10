@@ -3,6 +3,8 @@ using HardwarePC.Data.Services;
 using HardwarePC.WebSite.Services;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -38,24 +40,39 @@ namespace HardwarePC.WebSite.Controllers
 
         //ActionResult para el botón Grabar del formulario de producto
         [HttpPost]
-        public ActionResult Create(Product producto)
+        public ActionResult Create(Product product, HttpPostedFileBase file)
         {
-            this.CheckAuditPattern(producto, true);
-            var listModel = MyContext.ValidateModel(producto);
+            this.CheckAuditPattern(product, true);
+            var listModel = MyContext.ValidateModel(product);
             if (ModelIsValid(listModel))
-                return View(producto);
+                return View(product);
             try
             {
-                MyContext.Create(producto);
-                return RedirectToAction("Index");
+                if (file.ContentLength > 0)
+                {
+                    string filename = Path.GetFileName(file.FileName);
+                    string path = Path.Combine(Server.MapPath("/Content/Products"), filename);
+                    file.SaveAs(path);
 
+                    product.Image = filename;
+                    this.CheckAuditPattern(product, true);
+                    db.Product.Add(product);
+                    db.SaveChanges();
+
+                    return RedirectToAction("Index");
+                }
+
+                //MyContext.Create(product);
+                //return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
                 Logger.Instance.LogException(ex);
-                ViewBag.MessageDanger = ex.Message;
-                return View(producto);
             }
+
+            ViewBag.ArtistId = new SelectList(db.Artist, "Id", "FullName", product.ArtistId);
+            ViewBag.MessageDanger = "¡Error al cargar el Producto con su imagen.";
+            return View(product);
         }
 
 
@@ -70,27 +87,42 @@ namespace HardwarePC.WebSite.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.ArtistId = new SelectList(db.Artist, "Id", "FullName", producto.ArtistId);
             return View(producto);
         }
 
         [HttpPost]
-        public ActionResult Edit(Product producto)
+        public ActionResult Edit(Product product, HttpPostedFileBase file)
         {
-            this.CheckAuditPattern(producto);
-            var listModel = MyContext.ValidateModel(producto);
+            this.CheckAuditPattern(product);
+            var listModel = MyContext.ValidateModel(product);
             if (ModelIsValid(listModel))
-                return View(producto);
+                return View(product);
             try
             {
-                MyContext.Update(producto);
+                if (file != null && file.ContentLength > 0)
+                {
+                    string filename = Path.GetFileName(file.FileName);
+                    string path = Path.Combine(Server.MapPath("/content/products"), filename);
+                    file.SaveAs(path);
+                    product.Image = filename;
+                }
+                this.CheckAuditPattern(product, false);
+                db.Entry(product).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
+
+                //MyContext.Update(product);
+                //return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
                 Logger.Instance.LogException(ex);
-                ViewBag.MessageDanger = ex.Message;
-                return View(producto);
             }
+
+            ViewBag.ArtistId = new SelectList(db.Artist, "Id", "FullName", product.ArtistId);
+            ViewBag.MessageDanger = "¡Error al modificar el Producto con su imagen.";
+            return View(product);
         }
 
 

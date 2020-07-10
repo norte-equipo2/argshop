@@ -26,6 +26,7 @@ namespace HardwarePC.Data.Model
         [Required]
         public int ArtistId { get; set; }
 
+        [DisplayName("Imagen")]
         public string Image { get; set; }
 
         [DisplayName("Precio")]

@@ -194,9 +194,7 @@
     <Content Include="Content\img\mainmenu.jpg" />
     <Content Include="Content\img\Seba.jpg" />
     <Content Include="Content\img\taglio.jpg" />
-    <Content Include="Content\productos\gabinete.jpg" />
-    <Content Include="Content\productos\mouse.jpg" />
-    <Content Include="Content\productos\teclado.jpg" />
+    <Content Include="Content\products\Logo UAI 1.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
