@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace HardwarePC.Data.Services
 {
-    public class InMemoryProductoData : BaseDataService<Producto>
+    public class InMemoryProductoData : BaseDataService<Product>
     {
 
-        private static List<Producto> productos;
+        private static List<Product> productos;
 
         public InMemoryProductoData()
         {

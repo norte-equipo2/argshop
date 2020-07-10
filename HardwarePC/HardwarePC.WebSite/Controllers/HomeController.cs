@@ -10,11 +10,11 @@ namespace HardwarePC.WebSite.Controllers
 {
     public class HomeController : BaseController
     {
-        BaseDataService<Producto> db;
+        BaseDataService<Product> db;
 
         public HomeController()
         {
-            db = new BaseDataService<Producto>();
+            db = new BaseDataService<Product>();
         }
 
         public ActionResult Index()

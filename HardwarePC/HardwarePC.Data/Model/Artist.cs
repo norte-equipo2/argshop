@@ -9,16 +9,20 @@ using System.Threading.Tasks;
 
 namespace HardwarePC.Data.Model
 {
-    public class Marca : IdentityBase
+    public class Artist : IdentityBase
     {
-        public Marca()
+        public Artist()
         {
-            this.Products = new HashSet<Producto>();
+            this.Products = new HashSet<Product>();
         }
 
         [Required]
-        [DisplayName("Nombre marca")]
-        public string NombreMarca { get; set; }
+        [DisplayName("Nombre")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [DisplayName("Apellido")]
+        public string LastName { get; set; }
 
         public string LifeSpan { get; set; }
 
@@ -33,6 +37,8 @@ namespace HardwarePC.Data.Model
         [DisplayName("Recetas")]
         public int TotalProducts { get; set; }
 
-        public virtual ICollection<Producto> Products { get; set; }
+        [NotMapped]
+        public string FullName { get { return FirstName + " " + LastName; } }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

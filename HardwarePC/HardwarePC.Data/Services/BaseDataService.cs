@@ -12,11 +12,11 @@ namespace HardwarePC.Data.Services
 {
     public class BaseDataService<T> : IDataService<T> where T : IdentityBase, new()
     {
-        protected HardwarePcDbContext _db;
+        protected ArtShopDbContext _db;
 
         public BaseDataService()
         {
-            _db = new HardwarePcDbContext();
+            _db = new ArtShopDbContext();
         }
 
         public List<ValidationResult> ValidateModel(T model)

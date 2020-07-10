@@ -13,25 +13,51 @@ namespace HardwarePC.WebSite.Controllers
     [Authorize]
     public class  ProductoController : BaseController
     {
-        BaseDataService<Producto> db;
+
+        private readonly BaseDataService<Product> MyContext = new BaseDataService<Product>();
+        private readonly ArtShopDbContext db = new ArtShopDbContext();
 
         public ProductoController()
         {
-            db = new BaseDataService<Producto>();
+
         }
 
         // GET: Producto
         public ActionResult Index()
         {
-            var list = db.Get();
-            return View(list);
+            var products = MyContext.Get(null, null, "Artist");
+            return View(products);
         }
 
         [HttpGet]
         public ActionResult Create()
         {
+            ViewBag.ArtistId = new SelectList(db.Artist, "Id", "FullName");
             return View();
         }
+
+        //ActionResult para el botón Grabar del formulario de producto
+        [HttpPost]
+        public ActionResult Create(Product producto)
+        {
+            this.CheckAuditPattern(producto, true);
+            var listModel = MyContext.ValidateModel(producto);
+            if (ModelIsValid(listModel))
+                return View(producto);
+            try
+            {
+                MyContext.Create(producto);
+                return RedirectToAction("Index");
+
+            }
+            catch (Exception ex)
+            {
+                Logger.Instance.LogException(ex);
+                ViewBag.MessageDanger = ex.Message;
+                return View(producto);
+            }
+        }
+
 
         public ActionResult Edit(int? id)
         {
@@ -39,7 +65,7 @@ namespace HardwarePC.WebSite.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var producto = db.GetById(id.Value);
+            var producto = MyContext.GetById(id.Value);
             if (producto == null)
             {
                 return HttpNotFound();
@@ -48,15 +74,15 @@ namespace HardwarePC.WebSite.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(Producto producto)
+        public ActionResult Edit(Product producto)
         {
             this.CheckAuditPattern(producto);
-            var listModel = db.ValidateModel(producto);
+            var listModel = MyContext.ValidateModel(producto);
             if (ModelIsValid(listModel))
                 return View(producto);
             try
             {
-                db.Update(producto);
+                MyContext.Update(producto);
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
@@ -74,7 +100,7 @@ namespace HardwarePC.WebSite.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var producto = db.GetById(id.Value);
+            var producto = MyContext.GetById(id.Value);
             if (producto == null)
             {
                 return HttpNotFound();
@@ -83,11 +109,11 @@ namespace HardwarePC.WebSite.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(Producto producto)
+        public ActionResult Delete(Product producto)
         {
             try
             {
-                db.Delete(producto);
+                MyContext.Delete(producto);
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
@@ -96,30 +122,6 @@ namespace HardwarePC.WebSite.Controllers
                 ViewBag.MessageDanger = ex.Message;
                 return View(producto);
             }
-        }
-
-
-        //ActionResult para el botón Grabar del formulario de producto
-        [HttpPost]
-        public ActionResult Create(Producto producto)
-        {
-            this.CheckAuditPattern(producto, true);
-            var listModel = db.ValidateModel(producto);
-            if (ModelIsValid(listModel))
-                return View(producto);
-            try
-            {
-                db.Create(producto);
-                return RedirectToAction("Index");
-
-            }
-            catch (Exception ex)
-            {
-                Logger.Instance.LogException(ex);
-                ViewBag.MessageDanger = ex.Message;
-                return View(producto);
-            }
-
         }
     }
 }

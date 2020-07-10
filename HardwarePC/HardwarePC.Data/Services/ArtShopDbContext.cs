@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 namespace HardwarePC.Data.Services
 {
     //DbContext generalmente representa una conexión de base de datos y un conjunto de tablas. 
-    public partial class HardwarePcDbContext : DbContext
+    public partial class ArtShopDbContext : DbContext
     {
-        public HardwarePcDbContext() : base("name=DefaultConnection")
+        public ArtShopDbContext() : base("name=DefaultConnection")
         {
-            Database.SetInitializer<HardwarePcDbContext>(null);
+            Database.SetInitializer<ArtShopDbContext>(null);
         }
         /// <summary>
         /// PluralizingTableNameConvention
@@ -25,10 +25,10 @@ namespace HardwarePC.Data.Services
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
         /// DbSet Artist se utiliza para representar una tabla.
-        public virtual DbSet<Marca> Marca { get; set; }
+        public virtual DbSet<Artist> Artist { get; set; }
 
         /// DbSet Product se utiliza para representar una tabla.
-        public virtual DbSet<Producto> Producto { get; set; }
+        public virtual DbSet<Product> Product { get; set; }
 
         /// DbSet Product se utiliza para representar una tabla.
         public virtual DbSet<Error> Error { get; set; }

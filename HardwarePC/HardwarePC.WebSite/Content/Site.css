@@ -410,9 +410,11 @@ footer a {
         top: 1px;
     }
 
+/*
 li:hover {
     background: red;
 }
+*/
 
 .cardProducto {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);

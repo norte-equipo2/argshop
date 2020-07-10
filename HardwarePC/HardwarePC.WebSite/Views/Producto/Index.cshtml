@@ -1,4 +1,4 @@
-﻿@model IEnumerable<HardwarePC.Data.Model.Producto>
+﻿@model IEnumerable<HardwarePC.Data.Model.Product>
 @{
     ViewBag.Title = "Index";
 }
@@ -20,7 +20,7 @@
                         @Html.DisplayNameFor(model => model.Description)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.MarcaId)
+                        @Html.DisplayNameFor(model => model.ArtistId)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.Image)
@@ -49,7 +49,7 @@
                             @Html.DisplayFor(model => item.Description)
                         </td>
                         <td>
-                            @Html.DisplayFor(model => item.MarcaId)
+                            @Html.DisplayFor(model => item.ArtistId)
                         </td>
                         <td>
                             @Html.DisplayFor(model => item.Image)
