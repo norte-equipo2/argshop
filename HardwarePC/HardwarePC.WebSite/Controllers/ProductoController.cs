@@ -82,7 +82,7 @@ namespace HardwarePC.WebSite.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var producto = MyContext.GetById(id.Value);
+            var producto = db.Product.Find(id);
             if (producto == null)
             {
                 return HttpNotFound();
@@ -140,20 +140,18 @@ namespace HardwarePC.WebSite.Controllers
             return View(producto);
         }
 
-        [HttpPost]
-        public ActionResult Delete(Product producto)
+        
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
         {
-            try
+            var producto = db.Product.Find(id);
+            if (producto == null)
             {
-                MyContext.Delete(producto);
-                return RedirectToAction("Index");
+                return HttpNotFound();
             }
-            catch (Exception ex)
-            {
-                Logger.Instance.LogException(ex);
-                ViewBag.MessageDanger = ex.Message;
-                return View(producto);
-            }
+            db.Product.Remove(producto);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

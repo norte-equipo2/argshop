@@ -22,10 +22,13 @@
         <nav id="menu">
             <ul>
                 <li id="Home"><a href="/">Home</a></li>
-                <li id="Productos"><a href="/Producto/">Productos</a></li>
+                @if (Request.IsAuthenticated && User.IsInRole("Administrador"))
+                {
+                    <li id="Productos"><a href="/Producto/">Productos</a></li>
+                }
                 <li id="Acerca"><a href="/home/about/">Acerca</a></li>
                 <li id="Contacto"><a href="/home/contact/">Contacto</a></li>
-                <li id="COVID-19"><a href="/home/Covid_19/">COVID-19</a></li>
+                <li id="COVID-19"><a href="/home/catalogoProductos/">COVID-19</a></li>
                 <li id="Ubicacion"><a href="/home/Ubicacion/">Ubicación</a>
             </ul>
             @Html.Partial("_LoginPartial")
