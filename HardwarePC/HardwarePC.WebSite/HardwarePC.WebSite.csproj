@@ -168,6 +168,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArtistController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CartItemController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -196,7 +197,7 @@
     <Content Include="Content\img\mainmenu.jpg" />
     <Content Include="Content\img\Seba.jpg" />
     <Content Include="Content\img\taglio.jpg" />
-    <Content Include="Content\products\Logo UAI 1.png" />
+    <Content Include="Content\products\LogoUAI1.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -260,6 +261,10 @@
     <Content Include="Views\Home\catalogoProductos.cshtml" />
     <Content Include="Views\Shop\Index.cshtml" />
     <Content Include="Views\CartItem\Index.cshtml" />
+    <Content Include="Views\CartItem\Delete.cshtml" />
+    <Content Include="Views\Artist\Index.cshtml" />
+    <Content Include="Views\Artist\Create.cshtml" />
+    <Content Include="Views\Artist\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

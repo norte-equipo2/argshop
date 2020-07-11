@@ -33,7 +33,8 @@ namespace HardwarePC.WebSite.Controllers
 
             var cartitem = new CartItem
             {
-                Price = 100,
+                
+                Price = MyContext.GetById(id).Price,
                 ProductId = id,
                 Quantity = 2,
             };

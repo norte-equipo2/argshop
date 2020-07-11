@@ -1,54 +1,23 @@
-﻿@model IEnumerable<HardwarePC.Data.Model.Product>
+﻿
+@model IEnumerable<HardwarePC.Data.Model.Product>
 
-@{ ViewBag.Title = "Index"; }
+@{ ViewBag.Title = "catalogoProductos"; }
 
-<h2>Lista de productos para comprar</h2>
+<h2>Catálogo de Productos</h2>
 
-
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Artist.FullName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Image)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th></th>
-    </tr>
-
+<div class="row">
     @foreach (var item in Model)
     {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Artist.FullName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Title)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Description)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Image)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Price)
-    </td>
 
-
-    <td>
+<div class="columnaProducto">
+    <div class="cardProducto">
+        <img src="~/content/products/@Html.DisplayFor(model => item.Image)" alt="imagen" style="width:100px;height:100px;margin-top:15px" />
+        <h1>@Html.DisplayFor(model => item.Title)</h1>
+        <p class="precioProducto">$@Html.DisplayFor(model => item.Price)</p>
+        <input type="number" name="Cantidad"  />
+        <p>.</p>
         @Html.ActionLink("Comprar", "Buy", new { id = item.Id })
+    </div>
+</div>}
 
-    </td>
-</tr>}
-
-</table>
+</div>

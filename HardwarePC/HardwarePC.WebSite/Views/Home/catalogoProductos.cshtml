@@ -1,4 +1,4 @@
-﻿@model IEnumerable<HardwarePC.Data.Model.Producto>
+﻿@model IEnumerable<HardwarePC.Data.Model.Product>
 @{
     ViewBag.Title = "catalogoProductos";
 }
@@ -16,7 +16,7 @@
                 <h1>@Html.DisplayFor(model => item.Title)</h1>
                 <p class="precioProducto">$@Html.DisplayFor(model => item.Price)</p>
                 <p>.</p>
-                <p><button>Añadir al Carrito</button></p>
+                @Html.ActionLink("Comprar", "Buy", new { id = item.Id })
             </div>
         </div>
     }
