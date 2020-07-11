@@ -2,7 +2,9 @@
 using HardwarePC.Data.Services;
 using HardwarePC.WebSite.Services;
 using System;
+using System.IO;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 
 namespace HardwarePC.WebSite.Controllers
@@ -10,48 +12,57 @@ namespace HardwarePC.WebSite.Controllers
     [Authorize]
     public class ArtistController : BaseController
     {
-        BaseDataService<Artist> db;
+       
+        private readonly BaseDataService<Artist> MyContext = new BaseDataService<Artist>();
+        private readonly ArtShopDbContext db = new ArtShopDbContext();
         public ArtistController()
         {
-            db = new BaseDataService<Artist>();
+            
         }
         public ActionResult Index()
         {
-            var list = db.Get();
-            return View(list);
+            var artist = MyContext.Get();
+            return View(artist);
         }
         [HttpGet]
         public ActionResult Create()
         {
+            ViewBag.ArtistId = new SelectList(db.Artist, "Id", "FullName");
             return View();
         }
+
+        //ActionResult para el botón Grabar del formulario de producto
         [HttpPost]
         public ActionResult Create(Artist artist)
         {
             this.CheckAuditPattern(artist, true);
-            var listModel = db.ValidateModel(artist);
+            var listModel = MyContext.ValidateModel(artist);
             if (ModelIsValid(listModel))
                 return View(artist);
             try
-            {
-                db.Create(artist);
-                return RedirectToAction("Index");
+            {         
+                    this.CheckAuditPattern(artist, true);
+                    db.Artist.Add(artist);
+                    db.SaveChanges();
 
+                    return RedirectToAction("Index");
+                             
             }
             catch (Exception ex)
             {
                 Logger.Instance.LogException(ex);
-                ViewBag.MessageDanger = ex.Message;
-                return View(artist);
             }
+
+            return View(artist);
         }
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var artist = db.GetById(id.Value);
+            var artist = MyContext.GetById(id.Value);
             if (artist == null)
             {
                 return HttpNotFound();
@@ -62,12 +73,12 @@ namespace HardwarePC.WebSite.Controllers
         public ActionResult Edit(Artist artist)
         {
             this.CheckAuditPattern(artist);
-            var listModel = db.ValidateModel(artist);
+            var listModel = MyContext.ValidateModel(artist);
             if (ModelIsValid(listModel))
                 return View(artist);
             try
             {
-                db.Update(artist);
+                MyContext.Update(artist);
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
@@ -83,7 +94,7 @@ namespace HardwarePC.WebSite.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var artist = db.GetById(id.Value);
+            var artist = MyContext.GetById(id.Value);
             if (artist == null)
             {
                 return HttpNotFound();
@@ -95,7 +106,7 @@ namespace HardwarePC.WebSite.Controllers
         {
             try
             {
-                db.Delete(artist);
+                MyContext.Delete(artist);
                 return RedirectToAction("Index");
             }
             catch (Exception ex)

@@ -14,8 +14,8 @@
 
         <header id="header">
             <div id="logo">
-                <h1><a href="/">HardwarePC</a></h1>
-                <h2><span>Insumos informáticos</span></h2>
+                <h1><a href="/">ArtShop</a></h1>
+                <h2><span>Pasión por el Arte</span></h2>
             </div>
         </header>
 
@@ -25,13 +25,14 @@
                 @if (Request.IsAuthenticated && User.IsInRole("Administrador"))
                 {
                     <li id="Productos"><a href="/Producto/">Productos</a></li>
-                    <li><a href="/Artist/">Profesionales</a></li>
+                    <li><a href="/Artist/">Artistas</a></li>
                 }
                 <li id="Acerca"><a href="/home/about/">Acerca</a></li>
                 <li id="Contacto"><a href="/home/contact/">Contacto</a></li>
-                <li id="COVID-19"><a href="/home/catalogoProductos/">COVID-19</a></li>
                 <li id="Ubicacion"><a href="/home/Ubicacion/">Ubicación</a>
-                <li><a href="/Shop/Index">Comprar</a></li>
+                <li><a href="/Shop/Index">Catálogo</a></li>
+                <li id="CarritoCompra"><a href="/CartItem/Index">Carrito de Compras</a>
+                 
 
             </ul>
             @Html.Partial("_LoginPartial")

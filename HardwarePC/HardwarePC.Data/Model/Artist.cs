@@ -34,7 +34,7 @@ namespace HardwarePC.Data.Model
         public string Description { get; set; }
 
         [Required]
-        [DisplayName("Recetas")]
+        [DisplayName("Total de Productos")]
         public int TotalProducts { get; set; }
 
         [NotMapped]
