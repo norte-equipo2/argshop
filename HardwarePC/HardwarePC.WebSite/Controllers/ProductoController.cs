@@ -15,29 +15,24 @@ namespace HardwarePC.WebSite.Controllers
     [Authorize]
     public class  ProductoController : BaseController
     {
-
         private readonly BaseDataService<Product> MyContext = new BaseDataService<Product>();
         private readonly ArtShopDbContext db = new ArtShopDbContext();
-
         public ProductoController()
         {
 
         }
-
         // GET: Producto
         public ActionResult Index()
         {
             var products = MyContext.Get(null, null, "Artist");
             return View(products);
         }
-
         [HttpGet]
         public ActionResult Create()
         {
             ViewBag.ArtistId = new SelectList(db.Artist, "Id", "FullName");
             return View();
         }
-
         //ActionResult para el botón Grabar del formulario de producto
         [HttpPost]
         public ActionResult Create(Product product, HttpPostedFileBase file)
@@ -61,7 +56,6 @@ namespace HardwarePC.WebSite.Controllers
 
                     return RedirectToAction("Index");
                 }
-
                 //MyContext.Create(product);
                 //return RedirectToAction("Index");
             }
@@ -69,13 +63,10 @@ namespace HardwarePC.WebSite.Controllers
             {
                 Logger.Instance.LogException(ex);
             }
-
             ViewBag.ArtistId = new SelectList(db.Artist, "Id", "FullName", product.ArtistId);
             ViewBag.MessageDanger = "¡Error al cargar el Producto con su imagen.";
             return View(product);
         }
-
-
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -90,7 +81,6 @@ namespace HardwarePC.WebSite.Controllers
             ViewBag.ArtistId = new SelectList(db.Artist, "Id", "FullName", producto.ArtistId);
             return View(producto);
         }
-
         [HttpPost]
         public ActionResult Edit(Product product, HttpPostedFileBase file)
         {
@@ -124,8 +114,6 @@ namespace HardwarePC.WebSite.Controllers
             ViewBag.MessageDanger = "¡Error al modificar el Producto con su imagen.";
             return View(product);
         }
-
-
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -138,9 +126,7 @@ namespace HardwarePC.WebSite.Controllers
                 return HttpNotFound();
             }
             return View(producto);
-        }
-
-        
+        }       
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {

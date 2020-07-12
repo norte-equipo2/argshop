@@ -37,5 +37,9 @@ namespace HardwarePC.Data.Services
 
         public virtual DbSet<CartItem> CartItem { get; set; }
 
+        public virtual DbSet<Order> Order { get; set; }
+
+        public virtual DbSet<orderDetail> orderDetail { get; set; }
+
     }
 }

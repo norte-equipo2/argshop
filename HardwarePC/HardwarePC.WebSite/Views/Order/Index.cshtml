@@ -1,0 +1,45 @@
+﻿@model IEnumerable<HardwarePC.Data.Model.CartItem>
+
+@{ ViewBag.Title = "Finalizar Compra"; }
+<h2>Carrito de compras</h2>
+
+
+<table id="tablaProductos">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.order.orderNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.productId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quantity)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.order.orderNumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.productId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.price)
+    </td>
+    <td>
+        @Html.EditorFor(modelItem => item.quantity)
+    </td>
+</tr>}
+</table>
+
+<p style="margin-top:10px;text-align: right">
+    <a href="/Order/finalizarCompra" class="miBoton">Continuar con la Compra</a>
+</p>
