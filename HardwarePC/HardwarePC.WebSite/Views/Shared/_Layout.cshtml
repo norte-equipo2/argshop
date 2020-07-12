@@ -32,8 +32,8 @@
                 <li id="Ubicacion"><a href="/home/Ubicacion/">Ubicación</a>
                 <li><a href="/Shop/Index">Catálogo</a></li>
                 <li id="CarritoCompra"><a href="/CartItem/Index">Carrito de Compras</a>
-                 
-
+            
+               
             </ul>
             @Html.Partial("_LoginPartial")
         </nav>
@@ -51,6 +51,7 @@
         <aside>
             <article>
                 <ul>
+                    <li><a href="/Order/Index">Order</a></li>
                     <li id="search">
                         <h2 class="search">Buscar productos</h2>
                         <form method="get" action="">
@@ -61,22 +62,6 @@
                         </form>
                     </li>
                 </ul>
-
-                <div class="container">
-                    <div class="row">
-                        <!-- Elementos generados a partir del JSON -->
-                        <main id="items" class="col-sm-8 row"></main>
-                        <!-- Carrito -->
-                            <h2>Carrito de Compras</h2>
-                            <!-- Elementos del carrito -->
-                            <ul id="carrito" class="list-group"></ul>
-                            <hr>
-                            <!-- Precio total -->
-                            <p class="text-right">Total: <span id="total"></span>$</p>
-                            <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
-                    </div>
-                </div>
-
             </article>
         </aside>
 

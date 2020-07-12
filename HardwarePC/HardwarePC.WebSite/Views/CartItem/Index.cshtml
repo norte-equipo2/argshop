@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<HardwarePC.Data.Model.CartItem>
 
-@{ ViewBag.Title = "Index"; }
+@{ ViewBag.Title = "Carrito de Compras"; }
 
 <h2>Carrito de compras</h2>
 
@@ -36,7 +36,7 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
+                @Html.EditorFor(modelItem => item.Quantity)
             </td>
 
             <td>
@@ -47,6 +47,10 @@
     }
 
 </table>
+
+<p style="margin-top:10px;text-align: right">
+    <a href="/CartItem/finalizarCompra" class="miBoton">Finalizar Compra</a>
+</p>
 
 
 

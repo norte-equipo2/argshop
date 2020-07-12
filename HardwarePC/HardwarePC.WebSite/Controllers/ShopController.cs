@@ -36,7 +36,7 @@ namespace HardwarePC.WebSite.Controllers
                 
                 Price = MyContext.GetById(id).Price,
                 ProductId = id,
-                Quantity = 2,
+                Quantity = 1,
             };
             this.CheckAuditPattern(cartitem, true);
 
@@ -47,8 +47,5 @@ namespace HardwarePC.WebSite.Controllers
             return RedirectToAction("Index", "CartItem");
 
         }
-
-
-
     }
 }
