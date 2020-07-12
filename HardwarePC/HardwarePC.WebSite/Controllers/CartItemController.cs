@@ -47,9 +47,10 @@ namespace HardwarePC.WebSite.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult finalizarCompra()
-        {
-            return View();
-        }
+        
+        //public ActionResult finalizarCompra()
+        //{
+        //    return View();
+        //}
     }
 }

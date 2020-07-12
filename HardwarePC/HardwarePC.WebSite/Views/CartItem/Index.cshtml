@@ -5,6 +5,13 @@
 <h2>Carrito de compras</h2>
 
 
+@*//HAY QUE RECUPERAR EL ID DE CART ITEM PARA PASARLO A ORDERCONTROLLER - INDEX (ORDEN DE COMPRA)*@
+
+@*@Html.ActionLink("Comprar", "Buy", new { (id = model.CartId))}
+@Html.ActionLink("blah", "blah", @Html.DisplayFor(modelItem =>  ))*@
+
+@*@Html.DisplayFor(Model., "Comprar", "Order", new { Model.LastName });*@
+
 <table id="tablaProductos">
     <tr>
         <th>
@@ -17,12 +24,10 @@
             @Html.DisplayNameFor(model => model.Price)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Quantity)
+            @Html.DisplayNameFor(model => model.CartId)
         </th>
-
         <th></th>
     </tr>
-
     @foreach (var item in Model)
     {
         <tr>
@@ -38,19 +43,14 @@
             <td>
                 @Html.EditorFor(modelItem => item.Quantity)
             </td>
-
             <td>
-
                 @Html.ActionLink("Delete", "Delete", new { id = item.Id })
             </td>
         </tr>
     }
-
 </table>
 
-<p style="margin-top:10px;text-align: right">
-    <a href="/CartItem/finalizarCompra" class="miBoton">Finalizar Compra</a>
-</p>
+
 
 
 

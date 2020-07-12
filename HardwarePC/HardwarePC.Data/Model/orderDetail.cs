@@ -12,5 +12,6 @@ namespace HardwarePC.Data.Model
         public int productId;
         public float price;
         public int quantity;
+        public virtual Order order { get; set; }
     }
 }

@@ -266,7 +266,7 @@
     <Content Include="Views\Artist\Index.cshtml" />
     <Content Include="Views\Artist\Create.cshtml" />
     <Content Include="Views\Artist\Edit.cshtml" />
-    <Content Include="Views\CartItem\finalizarCompra.cshtml" />
+    <Content Include="Views\Order\finalizarCompra.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
