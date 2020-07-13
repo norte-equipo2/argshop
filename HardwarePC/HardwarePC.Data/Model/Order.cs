@@ -8,12 +8,17 @@ namespace HardwarePC.Data.Model
 {
     public class Order : IdentityBase
     {
-        public string userId;
-        public DateTime orderDate;
-        public float totalPrice;
-        public int orderNumber;
-        public int itemCount;
+        public Order()
+        {
+            this.OrderDetail = new HashSet<OrderDetail>();
+        }
+        
+        public int UserId { get; set; }
+        public DateTime OrderDate { get; set; }
+        public float TotalPrice { get; set; }
+        public int OrderNumber { get; set; }
+        public int ItemCount { get; set; }
 
-        public virtual ICollection<orderDetail> orderDetail { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetail { get; set; }
     }
 }

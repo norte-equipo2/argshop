@@ -50,7 +50,7 @@ namespace HardwarePC.WebSite.Controllers
         
         //public ActionResult finalizarCompra()
         //{
-        //    return View();
+        //    return RedirectToAction("Order/Index");
         //}
     }
 }

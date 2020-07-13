@@ -39,7 +39,7 @@ namespace HardwarePC.Data.Services
 
         public virtual DbSet<Order> Order { get; set; }
 
-        public virtual DbSet<orderDetail> orderDetail { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetail { get; set; }
 
     }
 }

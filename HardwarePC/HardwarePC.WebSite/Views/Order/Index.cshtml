@@ -1,22 +1,22 @@
-﻿@model IEnumerable<HardwarePC.Data.Model.CartItem>
+﻿@model IEnumerable<HardwarePC.Data.Model.OrderDetail>
 
 @{ ViewBag.Title = "Finalizar Compra"; }
-<h2>Carrito de compras</h2>
+<h2>Orden de pedido</h2>
 
 
 <table id="tablaProductos">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.order.orderNumber)
+            @Html.DisplayNameFor(model => model.Order.OrderNumber)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.productId)
+            @Html.DisplayNameFor(model => model.ProductId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.price)
+            @Html.DisplayNameFor(model => model.Price)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.quantity)
+            @Html.DisplayNameFor(model => model.Quantity)
         </th>
 
         <th></th>
@@ -24,20 +24,21 @@
 
     @foreach (var item in Model)
     {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.order.orderNumber)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.productId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.price)
-    </td>
-    <td>
-        @Html.EditorFor(modelItem => item.quantity)
-    </td>
-</tr>}
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order.OrderNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+        </tr>
+    }    
 </table>
 
 <p style="margin-top:10px;text-align: right">

@@ -71,15 +71,12 @@
                     <label>
                         <input type="checkbox" checked="checked" name="sameadr"> Dirección envío igual que la de facturación
                     </label>
-                    <input type="submit" value="Finalizar" class="btn">
                 </form>
             </div>
+            <button class="btn-input" onclick="FinalizarCompra()">Finalizar</button>
         </div>
     </div>
 </body>
-
-
-
 
 <style>
     body {
@@ -184,3 +181,10 @@
         margin-bottom: 20px;
     }
 </style>
+
+
+<script>
+    function FinalizarCompra() {
+        alert("Gracias por su compra!");
+    }
+</script>

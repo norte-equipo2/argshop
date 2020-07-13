@@ -4,14 +4,6 @@
 
 <h2>Carrito de compras</h2>
 
-
-@*//HAY QUE RECUPERAR EL ID DE CART ITEM PARA PASARLO A ORDERCONTROLLER - INDEX (ORDEN DE COMPRA)*@
-
-@*@Html.ActionLink("Comprar", "Buy", new { (id = model.CartId))}
-@Html.ActionLink("blah", "blah", @Html.DisplayFor(modelItem =>  ))*@
-
-@*@Html.DisplayFor(Model., "Comprar", "Order", new { Model.LastName });*@
-
 <table id="tablaProductos">
     <tr>
         <th>
@@ -49,6 +41,9 @@
         </tr>
     }
 </table>
+
+
+@Html.ActionLink("Finalizar Compra", "../Order/Index", new { CartId = 5 })
 
 
 

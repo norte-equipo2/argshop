@@ -18,27 +18,37 @@ namespace HardwarePC.WebSite.Controllers
         [Authorize]
         public ActionResult Index(int CartId)
         {
-            
+
+            //var orderDetail = db.OrderDetail.Include(c => c.Order);
+
             var order = new Order
             {
-                orderDate = DateTime.Now,
-                totalPrice = 5000,
-                itemCount = 40,
-                userId = "asd",
-                orderNumber = 1
+                OrderDate = DateTime.Now,
+                TotalPrice = 5000,
+                ItemCount = 40,
+                UserId = 9,
+                OrderNumber = 1
             };
             this.CheckAuditPattern(order, true);
-            var orderDet = new orderDetail
+
+            var orderDet = new OrderDetail
             {
-                price = (float)MyContext.GetById(CartId).Price,
-                productId = MyContext.GetById(CartId).ProductId,
-                quantity = MyContext.GetById(CartId).Quantity,
+                Price = (float)MyContext.GetById(CartId).Price,
+                ProductId = MyContext.GetById(CartId).ProductId,
+                Quantity = MyContext.GetById(CartId).Quantity,
             };
             this.CheckAuditPattern(orderDet, true);
-            order.orderDetail = new List<orderDetail>() { orderDet };
+
+            order.OrderDetail = new List<OrderDetail>() { orderDet };
             db.Order.Add(order);
-            db.SaveChanges();
+            db.SaveChanges();            
+            return View(order.OrderDetail);
+        }
+        
+        public ActionResult finalizarCompra()
+        {
             return View();
-        }        
+        }
+
     }
 }

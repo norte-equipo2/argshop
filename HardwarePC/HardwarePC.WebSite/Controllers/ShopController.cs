@@ -37,6 +37,7 @@ namespace HardwarePC.WebSite.Controllers
                 Quantity = 1,
             };
             this.CheckAuditPattern(cartitem, true);
+
             cart.CartItem = new List<CartItem>() { cartitem };
             db.Cart.Add(cart);
             db.SaveChanges();

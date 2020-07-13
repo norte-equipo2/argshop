@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace HardwarePC.Data.Model
 {
-    public class orderDetail : IdentityBase
+    public class OrderDetail : IdentityBase
     {
-        public int orderId;
-        public int productId;
-        public float price;
-        public int quantity;
-        public virtual Order order { get; set; }
+        public int OrderId { get; set; }
+        public int ProductId { get; set; }
+        public float Price { get; set; }
+        public int Quantity { get; set; }
+
+        public virtual Order Order { get; set; }
     }
 }
